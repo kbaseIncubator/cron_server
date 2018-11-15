@@ -16,4 +16,5 @@ class TestServer(unittest.TestCase):
 
     def test_server_status(self):
         resp = requests.get(url).json()
-        print(resp)
+        self.assertTrue(len(resp['commit_hash']))
+        self.assertTrue(len(resp['repo_url']))
